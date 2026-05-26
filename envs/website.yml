@@ -1,0 +1,69 @@
+# website.yml
+name: felix
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Core Python
+  - python=3.11
+  - pip
+  - setuptools
+  - wheel
+
+  # Backend framework
+  - fastapi
+  - uvicorn
+  - pydantic
+
+  # Database
+  - sqlalchemy
+  - psycopg2
+  - alembic
+
+  # Auth / security
+  - python-jose
+  - passlib
+  - bcrypt
+
+  # API utilities
+  - httpx
+  - requests
+
+  # Environment management
+  - python-dotenv
+
+  # Data handling
+  - pandas
+  - numpy
+
+  # Validation / serialization
+  - marshmallow
+
+  # Dev tools
+  - pytest
+  - black
+  - isort
+  - mypy
+
+  # Node.js for React frontend
+  - nodejs=20
+
+  # Optional useful tools
+  - git
+
+  - pip:
+      # ASGI server extras
+      - "uvicorn[standard]"
+
+      # PostgreSQL async driver (optional but recommended)
+      - asyncpg
+
+      # FastAPI helpers
+      - fastapi-users
+
+      # CORS middleware support
+      - starlette
+
+      # Production server
+      - gunicorn
