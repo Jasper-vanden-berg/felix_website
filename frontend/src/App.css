@@ -55,3 +55,60 @@ body {
 .page-content {
   padding: 2rem;
 }
+
+.summaries-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  height: 150px;
+  padding-bottom: 20px;
+}
+
+.summary_panel {
+  background: #2a2a2a;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  min-height: 150px;
+}
+
+.summary_panel input {
+  width: 40%;
+  padding: 2px;
+  margin: 10px 0;
+}
+
+.summary_panel button {
+  width: 40%;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.summary_panel button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tracker-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.bottom-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.vertical-tab {
+  flex: 1;
+  height: 200px;
+  background: #333;
+  border-radius: 10px;
+}
