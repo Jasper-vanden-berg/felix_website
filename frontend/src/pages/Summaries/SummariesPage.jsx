@@ -8,17 +8,25 @@ import { SECTIONS } from "./sections";
 
 export default function SummariesPage() {
   const [selectedPatientId, setSelectedPatientId] = useState("");
+  const [patient, setPatient] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // dummy data for now
-  const patientData = {
-    name: "John Doe",
-    age: 54,
-    id: selectedPatientId,
-  };
+  const handleLoad = async (patientId) => {
+    if (!patientId) return;
 
-  const handleLoad = () => {
-    if (!selectedPatientId) return;
+    const res = await fetch(
+      `http://localhost:8000/patients/${patientId}`
+    );
+
+    const data = await res.json();
+
+    if (!data.found) {
+      setPatient(null);
+      setIsLoaded(false);
+      return;
+    }
+
+    setPatient(data);
     setIsLoaded(true);
   };
 
@@ -35,11 +43,14 @@ export default function SummariesPage() {
         />
 
         <PatientInfo
+          data={patient?.general_info}
           isLoaded={isLoaded}
-          patientData={patientData}
         />
 
-        <StatusTracker isLoaded={isLoaded} />
+        <StatusTracker
+          data={patient?.tracker}
+          isLoaded={isLoaded}
+        />    
 
       </div>
 

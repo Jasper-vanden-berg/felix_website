@@ -63,6 +63,40 @@
   cursor: not-allowed;
 }
 
+/* Patient search */
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+.autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  max-height: 140px;
+  overflow-y: auto;
+
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+  color: black;
+}
+
+.autocomplete-item {
+  padding: 4px 8px;
+  cursor: pointer;
+  color: black;
+}
+
+.autocomplete-item:hover {
+  background: #f2f2f2;
+}
+
 
 /* Status Tracker */
 

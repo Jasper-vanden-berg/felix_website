@@ -1,9 +1,14 @@
-export function openPatientFolder(patientId) {
+export async function openPatientFolder(patientId) {
   if (!patientId) return;
 
-  // placeholder for now
-  alert(`Would open folder for patient: ${patientId}`);
+  try {
+    const res = await fetch(
+      `http://localhost:8000/patients/open-folder/${patientId}`
+    );
 
-  // later when backend exists:
-  // window.open(`http://localhost:8000/patient/${patientId}/folder`, "_blank");
+    return await res.json();
+  } catch (err) {
+    console.error("Failed to open folder:", err);
+    return { opened: false };
+  }
 }
