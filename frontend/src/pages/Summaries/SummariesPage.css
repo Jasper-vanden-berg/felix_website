@@ -1,0 +1,106 @@
+.bottom-tabs-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bottom-tab {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.bottom-tab:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+
+
+.bottom-tab-header {
+  padding: 8px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.bottom-tab-body {
+  padding: 10px;
+}
+
+.summaries-page {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  height: 150px;
+}
+
+.summary_panel {
+  background: #14c4ca;
+  color: white;
+  border-radius: 12px;
+  height: 128px;
+}
+
+.summary_panel input {
+  width: 40%;
+  padding: 2px;
+  margin: 10px 0;
+}
+
+.summary_panel button {
+  width: 40%;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.summary_panel button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Status Tracker */
+
+.tracker-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tracker-label{
+    height:15px;
+    font-size: 0.6rem;
+}
+.tracker-status{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* controls spacing between dot and text */
+}
+.tracker-status-text{
+  font-size: 12px;
+  line-height: 1;
+  padding-right: 10px;
+}
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.green {
+  background-color: #2ecc71;
+}
+
+.status-dot.orange {
+  background-color: #f39c12;
+}
+
+.status-dot.red {
+  background-color: #e74c3c;
+}

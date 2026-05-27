@@ -1,8 +1,10 @@
 import { useState } from "react";
+import "./SummariesPage.css";
 import PatientSearch from "./components/PatientSearch";
 import PatientInfo from "./components/PatientInfo";
 import StatusTracker from "./components/StatusTracker";
-import BottomTabs from "./components/BottomTabs";
+import { BottomTabs, BottomTab } from "./components/BottomTabs";
+import { SECTIONS } from "./sections";
 
 export default function SummariesPage() {
   const [selectedPatientId, setSelectedPatientId] = useState("");
@@ -42,7 +44,13 @@ export default function SummariesPage() {
       </div>
 
       {/* BOTTOM: vertical tabs (empty for now) */}
-      <BottomTabs />
+      <BottomTabs>
+        {SECTIONS.map(({ id, label, Component }) => (
+          <BottomTab key={id} id={id} name={label}>
+            <Component />
+          </BottomTab>
+        ))}
+      </BottomTabs>
 
     </div>
   );
